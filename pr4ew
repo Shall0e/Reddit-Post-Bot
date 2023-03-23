@@ -10,7 +10,8 @@ $body = @{
   original_content = 'false'
   post_to_twitter = 'false'
   sendreplies = 'true'
-  richtext_json = '%7B%22document%22%3A%5B%7B%22e%22%3A%22par%22%2C%22c%22%3A%5B%7B%22e%22%3A%22text%22%2C%22t%22%3A%22dgfsdfgfgfdfdg%22%7D%5D%7D%5D%7D&validate_on_submit=true'
+  richtext_json = '%7B%22document%22%3A%5B%7B%22e%22%3A%22par%22%2C%22c%22%3A%5B%7B%22e%22%3A%22text%22%2C%22t%22%3A%22dgfsdfgfgfdfdg%22%7D%5D%7D%5D%7D'
+  validate_on_submit = 'true'
 }
 
 
