@@ -1,22 +1,28 @@
-#0q2
+#2
+$body = @{
+  sr = 'testifvbjkggerjbkergj'
+  submit_type = 'subreddit'
+  api_type = 'json'
+  show_error_list = 'true'
+  title = 'fgdfhgfd'
+  spoiler=false&nsfw = 'false'
+  kind = 'self'
+  original_content = 'false'
+  post_to_twitter = 'false'
+  sendreplies = 'true'
+  richtext_json = '%7B%22document%22%3A%5B%7B%22e%22%3A%22par%22%2C%22c%22%3A%5B%7B%22e%22%3A%22text%22%2C%22t%22%3A%22dgfsdfgfgfdfdg%22%7D%5D%7D%5D%7D&validate_on_submit=true'
+}
+
 
 Invoke-WebRequest -UseBasicParsing -Uri "https://oauth.reddit.com/api/submit?resubmit=true&redditWebClient=desktop2x&app=desktop2x-client-production&rtj=only&raw_json=1&gilding_detail=1" `
 -Method POST `
 -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0" `
 -Headers @{
 "Accept" = "*/*"
-  "Accept-Language" = "en-US,en;q=0.5"
-  "Accept-Encoding" = "gzip, deflate, br"
   "Referer" = "https://www.reddit.com/"
-  "x-reddit-loid" = "000000000vsla2zsg.2.1675463627571.Z0FBQUFBQmtGN09JLXk2Tmc2TDJuUkdfS0UySzYzTmx3T0hrR3JrWUdmZW9pV2FUbjRmdFdHZkVzZ0tTXzNBQkFUT3cxRHdnREhIZXNiNTJ1U1ZmWnhscnRHR2lSaWo5WEdDR3kxbDl3aWxiZDRGX0REdU9SaFpVZFJFWmNiZWpuSnhMS05XazVFTGY"
-  "x-reddit-session" = "U1dlrNGDLL6TvWrKY.0.1679540060345.Z0FBQUFBQmtHNzljbVM3aUNCcjdrb2s0eDlNUmJtN2NUV29UaE03dVA3ZVAtNmpvQk45bzlIdTlhUEJMTWZTaTBKS2xFQnlDSGVYS25wMUdVQVc5OWlZdnhjU0VzdHBjN1VVYkZJVVVvUElLRl95dFByMTNPMmR4ekxKQ2FvRTg3RTNyemFHYWk5bmw"
   "Origin" = "https://www.reddit.com"
-  "DNT" = "1"
-  "Sec-Fetch-Dest" = "empty"
   "Sec-Fetch-Mode" = "cors"
-  "Sec-Fetch-Site" = "same-site"
   "Authorization" = "Bearer 491525717936-RBYof0tLymscBKh6UZG4GC3639GC3A"
-  "TE" = "trailers"
 } `
 -ContentType "application/x-www-form-urlencoded" `
--Body "sr=testifvbjkggerjbkergj&submit_type=subreddit&api_type=json&show_error_list=true&title=fgdfhgfd&spoiler=false&nsfw=false&kind=self&original_content=false&post_to_twitter=false&sendreplies=true&richtext_json=%7B%22document%22%3A%5B%7B%22e%22%3A%22par%22%2C%22c%22%3A%5B%7B%22e%22%3A%22text%22%2C%22t%22%3A%22dgfsdfgfgfdfdg%22%7D%5D%7D%5D%7D&validate_on_submit=true"
+-Body $body
