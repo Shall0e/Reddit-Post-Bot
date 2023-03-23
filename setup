@@ -1,1 +1,46 @@
-setup
+cls
+$cUser = ('C:\'+$env:HOMEPATH+'\Desktop\Reddit-Post-Bot')
+$loadCount = 0
+$version = ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content | convertfrom-json).version
+
+function load($ia, $message) {cls; echo 'Loading:'; $global:loadCount += $ia; $loadingScreen[$loadCount]; echo $message; echo $message >> ($cUser + '\.log')}
+
+
+$loadingScreen = (
+    '[              ]',
+    '[+             ]',
+    '[++            ]',
+    '[+++           ]',
+    '[++++          ]',
+    '[+++++         ]',
+    '[++++++        ]',
+    '[+++++++       ]',
+    '[++++++++      ]',
+    '[+++++++++     ]',
+    '[++++++++++    ]',
+    '[+++++++++++   ]',
+    '[++++++++++++  ]',
+    '[+++++++++++++ ]',
+    '[++++++++++++++]'
+)
+
+(Test-Path -Path $cUser -PathType Leaf)
+
+
+if (!(Test-Path $cUser)) {
+
+mkdir -Path $cUser
+load '0' ('Folder created: '+$cUser)
+echo 'r/all' > ($cUser+'\Setup\SubredditList.txt')
+load '1' 'SubredditList.txt downloaded and created!'
+echo 'r/all' > ($cUser+'\Setup\RedditPost.json')
+load '1' 'RedditPost.txt downloaded and created!' 
+echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content > ($cUser+'\Setup\Settings.json')
+load '3' 'Settings.json started!' 
+echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/READ_THIS').content > ($cUser+'\READ_BEFORE_USING.txt')
+load '3' 'Tutorial downloaded!' 
+
+start ($cUser+'\READ_BEFORE_USING.txt')
+}
+
+start $cUser
