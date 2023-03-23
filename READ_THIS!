@@ -1,1 +1,8 @@
+heya! before you click that .bat file, you may want to check some things before running.
 
+it seems this is your first time installing this program, so ill give you a small run down.
+
+
+Settings.JSON controls the bot, you can modify everything except for the "version" string, as it uses it to auto-update itself, and contains your current version..
+SubredditList.TXT are the subreddits the bot should post in.
+Post.
