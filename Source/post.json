@@ -1,0 +1,8 @@
+{
+  "Post_Type": "string",
+  "Title": "string",
+  "Description": "string",
+  "Nsfw": "boolean",
+  "Oc": "boolean",
+  "Spoiler": "boolean"
+}
