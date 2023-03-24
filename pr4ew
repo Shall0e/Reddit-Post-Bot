@@ -1,20 +1,18 @@
-#2
 $body = @{
-  sr = 'testifvbjkggerjbkergj'
+  sr = 'redditdev'
   submit_type = 'subreddit'
   api_type = 'json'
   show_error_list = 'true'
-  title = 'fgdfhgfd'
+  title = 'fgdfhxcvcxbxcbxcvbczxbgfd'
   spoiler = 'false'
   nsfw = 'false'
   kind = 'self'
   original_content = 'false'
   post_to_twitter = 'false'
   sendreplies = 'true'
-  richtext_json = '%7B%22document%22%3A%5B%7B%22e%22%3A%22par%22%2C%22c%22%3A%5B%7B%22e%22%3A%22text%22%2C%22t%22%3A%22dgfsdfgfgfdfdg%22%7D%5D%7D%5D%7D'
+  richtext_json = '{"document":[{"e":"text","t":"fgfdgfdgdfgfdgffgdfg"}]}'
   validate_on_submit = 'true'
 }
-
 
 Invoke-WebRequest -UseBasicParsing -Uri "https://oauth.reddit.com/api/submit?resubmit=true&redditWebClient=desktop2x&app=desktop2x-client-production&rtj=only&raw_json=1&gilding_detail=1" `
 -Method POST `
@@ -23,8 +21,7 @@ Invoke-WebRequest -UseBasicParsing -Uri "https://oauth.reddit.com/api/submit?res
 "Accept" = "*/*"
   "Referer" = "https://www.reddit.com/"
   "Origin" = "https://www.reddit.com"
-  "Sec-Fetch-Mode" = "cors"
-  "Authorization" = "Bearer 491525717936-RBYof0tLymscBKh6UZG4GC3639GC3A"
+  "Authorization" = "Bearer 2491525717936-RBYof0tLymscBKh6UZG4GC3639GC3A"
 } `
 -ContentType "application/x-www-form-urlencoded" `
 -Body $body
