@@ -1,5 +1,13 @@
+$cUser = ('C:\'+$env:HOMEPATH+'\Desktop\Reddit-Post-Bot')
+$version = ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content | convertfrom-json).version
+$Settings_rawJSON = (Get-Content -path ($cUser+'\Settings.json') | ConvertFrom-Json)
+$Settings_redditID = $Settings_rawJSON.'reddit-Id'
+
+
+Function Reddit-Post($sr, $dsafd) {
+
 $body = @{
-  sr = 'redditdev'
+  sr = $sr
   submit_type = 'subreddit'
   api_type = 'json'
   show_error_list = 'true'
@@ -25,3 +33,4 @@ Invoke-WebRequest -UseBasicParsing -Uri "https://oauth.reddit.com/api/submit?res
 } `
 -ContentType "application/x-www-form-urlencoded" `
 -Body $body
+}
