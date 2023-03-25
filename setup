@@ -31,15 +31,15 @@ if (!(Test-Path $cUser)) {
 
 mkdir -Path $cUser
 mkdir -Path ($cUser+'\Setup')
-mkdir -Path ($cUser+'\Source')
+mkdir -Path ($cUser+'\Resources')
 load '0' ('Folders created: '+$cUser)
 echo 'r/all' > ($cUser+'\Setup\SubredditList.txt')
 load '1' 'SubredditList.txt downloaded and created!'
 echo 'r/all' > ($cUser+'\Setup\RedditPost.json')
 load '1' 'RedditPost.txt downloaded and created!' 
-echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content > ($cUser+'\Setup\Settings.json')
+echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Resources/Settings.json').content > ($cUser+'\Setup\Settings.json')
 load '3' 'Settings.json started!' 
-echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/READ_THIS').content > ($cUser+'\READ_BEFORE_USING.txt')
+echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Resources/READ_THIS').content > ($cUser+'\READ_BEFORE_USING.txt')
 load '3' 'Tutorial downloaded!' 
 
 start ($cUser+'\READ_BEFORE_USING.txt')
