@@ -4,8 +4,10 @@ $NewVersion = ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0
 $Settings_rawJSON = (Get-Content -path ($cUser+'\Settings.json') | ConvertFrom-Json)
 $Settings_redditID = $Settings_rawJSON.'reddit-Id'
 $Settings_version = $Settings_rawJSON.'version'
+$Settings_version
+$NewVersion
 
-if ($NewVersion -notmatch $Settings_version) {echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/run').content > ($cUser+'\'+$PSCommandPath)}
+if ($NewVersion -notmatch $Settings_version) {Invoke-Expression -Command (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/update').content}
 
 Function Reddit-Post($sr, $dsafd) {
 $body = @{
