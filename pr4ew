@@ -1,11 +1,13 @@
+cls
 $cUser = ('C:\'+$env:HOMEPATH+'\Desktop\Reddit-Post-Bot')
-$version = ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content | convertfrom-json).version
+$NewVersion = ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content | convertfrom-json).version
 $Settings_rawJSON = (Get-Content -path ($cUser+'\Settings.json') | ConvertFrom-Json)
 $Settings_redditID = $Settings_rawJSON.'reddit-Id'
+$Settings_version = $Settings_rawJSON.'version'
 
+if ($NewVersion -notmatch $Settings_version) {echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/run').content > ($cUser+'\'+$PSCommandPath)}
 
 Function Reddit-Post($sr, $dsafd) {
-
 $body = @{
   sr = $sr
   submit_type = 'subreddit'
@@ -21,7 +23,6 @@ $body = @{
   richtext_json = '{"document":[{"e":"text","t":"fgfdgfdgdfgfdgffgdfg"}]}'
   validate_on_submit = 'true'
 }
-
 Invoke-WebRequest -UseBasicParsing -Uri "https://oauth.reddit.com/api/submit?resubmit=true&redditWebClient=desktop2x&app=desktop2x-client-production&rtj=only&raw_json=1&gilding_detail=1" `
 -Method POST `
 -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0" `
