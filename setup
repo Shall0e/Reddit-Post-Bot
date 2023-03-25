@@ -3,7 +3,7 @@ $cUser = ('C:\'+$env:HOMEPATH+'\Desktop\Reddit-Post-Bot')
 $loadCount = 0
 $version = ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content | convertfrom-json).version
 
-function load($ia, $message) {cls; echo 'Loading:'; $global:loadCount += $ia; $loadingScreen[$loadCount]; echo $message; echo $message >> ($cUser + '\.log')}
+function load($ia, $message) {cls; echo 'Loading:'; $global:loadCount += $ia; $loadingScreen[$loadCount]; echo $message; echo $message >> ($cUser + '\Resources\.log')}
 
 
 $loadingScreen = (
