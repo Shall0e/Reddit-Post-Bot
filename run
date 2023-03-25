@@ -1,3 +1,5 @@
+#672249
+
 cls
 $cUser = ('C:\'+$env:HOMEPATH+'\Desktop\Reddit-Post-Bot')
 $NewVersion = ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content | convertfrom-json).version
@@ -32,7 +34,7 @@ Invoke-WebRequest -UseBasicParsing -Uri "https://oauth.reddit.com/api/submit?res
 "Accept" = "*/*"
   "Referer" = "https://www.reddit.com/"
   "Origin" = "https://www.reddit.com"
-  "Authorization" = "Bearer 2491525717936-RBYof0tLymscBKh6UZG4GC3639GC3A"
+  "Authorization" = "Bearer 1525717936-RBYof0tLymscBKh6UZG4GC3639GC3A"
 } `
 -ContentType "application/x-www-form-urlencoded" `
 -Body $body
