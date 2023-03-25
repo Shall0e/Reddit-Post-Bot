@@ -30,7 +30,9 @@ $loadingScreen = (
 if (!(Test-Path $cUser)) {
 
 mkdir -Path $cUser
-load '0' ('Folder created: '+$cUser)
+mkdir -Path ($cUser+'\Setup')
+mkdir -Path ($cUser+'\Source')
+load '0' ('Folders created: '+$cUser)
 echo 'r/all' > ($cUser+'\Setup\SubredditList.txt')
 load '1' 'SubredditList.txt downloaded and created!'
 echo 'r/all' > ($cUser+'\Setup\RedditPost.json')
