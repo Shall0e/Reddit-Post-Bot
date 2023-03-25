@@ -37,7 +37,7 @@ load '0' ('Folders created: '+$cUser)
 echo 'r/all' > ($cUser+'\Setup\SubredditList.txt')
 
 load '1' 'SubredditList.txt downloaded and created!'
-echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Message.json') > ($cUser+'\Setup\Message.json')
+echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Message.json').content > ($cUser+'\Setup\Message.json')
 
 load '1' 'RedditPost.txt downloaded and created!' 
 echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content > ($cUser+'\Setup\Settings.json')
