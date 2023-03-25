@@ -1,1 +1,4 @@
-
+$cUser = ('C:\'+$env:HOMEPATH+'\Desktop\Reddit-Post-Bot')
+echo ((Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/Settings.json').content) > ($cUser+'\Settings.json')
+echo (Invoke-WebRequest -uri 'https://raw.githubusercontent.com/Shall0e/Reddit-Post-Bot/main/Source/READ_THIS').content > ($cUser+'\READ_BEFORE_USING.txt')
+powershell.exe -Command ($cUser+'\fvdsgvfrdg.ps1')
